@@ -19,4 +19,4 @@ services:
     class: Coders\Bundle\CoreBundle\Data\Repository\Session
     calls:
       - [setSession, [ @session ]]
-      - [set, [ [@data.entry.example1, @data.entry.example2, @data.entry.example3] ]]
+      - [setIfNotSet, [ [@data.entry.example1, @data.entry.example2, @data.entry.example3] ]]

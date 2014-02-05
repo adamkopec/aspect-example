@@ -52,4 +52,12 @@ class Session implements Repository {
     {
         $this->session->set('entries', $entries);
     }
+
+    /** @param Entry[] $entries */
+    public function setIfNotSet(array $entries)
+    {
+        if (!$this->session->has('entries')) {
+            $this->set($entries);
+        }
+    }
 }
