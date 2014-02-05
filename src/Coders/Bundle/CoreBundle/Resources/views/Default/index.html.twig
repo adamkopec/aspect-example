@@ -1,1 +1,16 @@
-Index
+Index <a href="{{ path('coders_core_list') }}">Odśwież</a>
+
+<ul>
+    {% for entry in entries %}
+        <li>
+            {{ entry.valueA|e }} / {{ entry.valueB|e }}
+            <a href="{{ path('coders_core_delete', {'valueA': entry.valueA,'valueB': entry.valueB}) }}">
+                usuń
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+<div id="form">
+    {{ form(form) }}
+</div>

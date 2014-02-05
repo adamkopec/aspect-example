@@ -1,7 +1,22 @@
-parameters:
-#    coders_core.example.class: Coders\Bundle\CoreBundle\Example
-
 services:
-#    coders_core.example:
-#        class: %coders_core.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+
+  data.entry.example1:
+    class: Coders\Bundle\CoreBundle\Data\Entry
+    arguments:
+        - { valueA: a1, valueB: b1 }
+
+  data.entry.example2:
+    class: Coders\Bundle\CoreBundle\Data\Entry
+    arguments:
+        - { valueA: a2, valueB: b2}
+
+  data.entry.example3:
+    class: Coders\Bundle\CoreBundle\Data\Entry
+    arguments:
+        - { valueA: a3, valueB: b3}
+
+  data.repository:
+    class: Coders\Bundle\CoreBundle\Data\Repository\Session
+    calls:
+      - [setSession, [ @session ]]
+      - [set, [ [@data.entry.example1, @data.entry.example2, @data.entry.example3] ]]

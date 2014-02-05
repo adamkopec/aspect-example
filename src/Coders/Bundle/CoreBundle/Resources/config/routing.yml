@@ -1,3 +1,11 @@
-coders_core_homepage:
+coders_core_list:
     pattern:  /
     defaults: { _controller: CodersCoreBundle:Default:index }
+
+coders_core_delete:
+    pattern:  /delete/{valueA}/{valueB}
+    defaults: { _controller: CodersCoreBundle:Default:delete }
+
+coders_core_add:
+    pattern:  /add
+    defaults: { _controller: CodersCoreBundle:Default:add }
