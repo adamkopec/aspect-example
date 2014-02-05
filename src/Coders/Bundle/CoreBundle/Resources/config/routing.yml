@@ -1,0 +1,3 @@
+coders_core_homepage:
+    pattern:  /
+    defaults: { _controller: CodersCoreBundle:Default:index }

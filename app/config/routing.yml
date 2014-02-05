@@ -1,0 +1,8 @@
+coders_aspect:
+    resource: "@CodersAspectBundle/Resources/config/routing.yml"
+    prefix:   /
+
+coders_core:
+    resource: "@CodersCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+

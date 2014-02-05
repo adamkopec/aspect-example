@@ -1,0 +1,3 @@
+coders_aspect_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: CodersAspectBundle:Default:index }

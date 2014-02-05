@@ -1,0 +1,7 @@
+parameters:
+#    coders_aspect.example.class: Coders\Bundle\AspectBundle\Example
+
+services:
+#    coders_aspect.example:
+#        class: %coders_aspect.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

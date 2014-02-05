@@ -1,0 +1,7 @@
+parameters:
+#    coders_core.example.class: Coders\Bundle\CoreBundle\Example
+
+services:
+#    coders_core.example:
+#        class: %coders_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
