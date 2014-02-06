@@ -16,6 +16,7 @@ use Go\Lang\Annotation\After;
 use Go\Lang\Annotation\Before;
 use Go\Lang\Annotation\Around;
 use Go\Lang\Annotation\Pointcut;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Debug\DebugClassLoader;
 
 /**
@@ -40,16 +41,17 @@ class TestAspect implements Aspect
      * Method that should be called before real method
      *
      * @param MethodInvocation $invocation Invocation
-     * @Before("within(\Coders\Bundle\**)")
+     * @Before("within(Repository+)")
      */
     public function beforeMethodExecution(MethodInvocation $invocation)
     {
         $obj = $invocation->getThis();
-        file_put_contents('test','Calling Before Interceptor for method: ',
+        throw new Exception("Fuck");
+        echo 'Calling Before Interceptor for method: ',
         is_object($obj) ? get_class($obj) : $obj,
         $invocation->getMethod()->isStatic() ? '::' : '->',
         $invocation->getMethod()->getName(),
         '()',
-        "<br>\n");
+        "<br>\n";
     }
 }

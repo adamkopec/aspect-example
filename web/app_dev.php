@@ -27,11 +27,8 @@ $applicationAspectKernel = AppAspectKernel::getInstance();
 $applicationAspectKernel->init(array(
     'debug' => true, // use 'false' for production mode
     // Cache directory
-    'cacheDir'  => __DIR__ . '/../app/cache/',
+    'cacheDir' => __DIR__ .'/../app/cache/aspect',
     // Include paths restricts the directories where aspects should be applied, or empty for all source files
-    'includePaths' => array(
-        __DIR__ . '/../src/'
-    )
 ));
 
 require_once __DIR__.'/../app/AppKernel.php';
