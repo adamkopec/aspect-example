@@ -1,10 +1,12 @@
 <?php
 use Go\Core\AspectContainer;
+use Go\Core\AspectKernel;
+use Coders\Bundle\AspectBundle\Aspect\TestAspect;
 
 /**
  * Application Aspect Kernel
  */
-class AppAspectKernel extends \Go\Core\AspectKernel
+class AppAspectKernel extends AspectKernel
 {
 
     /**
@@ -16,6 +18,6 @@ class AppAspectKernel extends \Go\Core\AspectKernel
      */
     protected function configureAop(AspectContainer $container)
     {
-        $container->registerAspect(new \Coders\Bundle\AspectBundle\Aspect\TestAspect());
+        $container->registerAspect(new TestAspect(123));
     }
 }

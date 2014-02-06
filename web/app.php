@@ -5,6 +5,15 @@ use Symfony\Component\HttpFoundation\Request;
 
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 
+require_once __DIR__.'/../app/AppAspectKernel.php';
+
+// Initialize an aspect container
+$aspectKernel = AppAspectKernel::getInstance();
+$aspectKernel->init(array(
+    'cacheDir' => __DIR__ .'/../app/cache/aspect',
+    'debug' => false,
+));
+
 // Use APC for autoloading to improve performance.
 // Change 'sf2' to a unique prefix in order to prevent cache key conflicts
 // with other applications also using APC.
