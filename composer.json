@@ -9,7 +9,7 @@
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "~2.4",
-        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/orm": "~2.1",
         "doctrine/doctrine-bundle": "~1.2",
         "twig/extensions": "~1.0",
         "symfony/assetic-bundle": "~2.3",
@@ -18,7 +18,8 @@
         "sensio/distribution-bundle": "~2.3",
         "sensio/framework-extra-bundle": "~3.0",
         "sensio/generator-bundle": "~2.3",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "lisachenko/go-aop-php": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

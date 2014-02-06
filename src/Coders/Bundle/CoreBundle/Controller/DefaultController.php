@@ -17,7 +17,7 @@ class DefaultController extends Controller
     public function deleteAction($valueA, $valueB) {
         $entry = new Entry(array('valueA' => $valueA, 'valueB' => $valueB));
         $this->_getRepository()->delete($entry);
-        return $this->_renderList();
+        return $this->redirect($this->generateUrl('coders_core_list'));
     }
 
     public function addAction(Request $request) {
@@ -29,7 +29,7 @@ class DefaultController extends Controller
             $this->_getRepository()->add($entry);
         }
 
-        return $this->_renderList();
+        return $this->redirect($this->generateUrl('coders_core_list'));
     }
 
     /**

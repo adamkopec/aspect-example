@@ -20,6 +20,20 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 Debug::enable();
 
+require_once __DIR__ . '/../app/AppAspectKernel.php';
+
+// Initialize an application aspect container
+$applicationAspectKernel = AppAspectKernel::getInstance();
+$applicationAspectKernel->init(array(
+    'debug' => true, // use 'false' for production mode
+    // Cache directory
+    'cacheDir'  => __DIR__ . '/../app/cache/',
+    // Include paths restricts the directories where aspects should be applied, or empty for all source files
+    'includePaths' => array(
+        __DIR__ . '/../src/'
+    )
+));
+
 require_once __DIR__.'/../app/AppKernel.php';
 
 $kernel = new AppKernel('dev', true);
